@@ -1,0 +1,15 @@
+<% @spots_to_fill.each_with_index do |spot, index| %>
+  <% if spot == 0 %>
+    _ <pre> </pre>
+  <% else %>
+  <%= @word[index] %>
+  <% end %>
+<% end %>
+
+<form action="/make-guess" method="post">
+  <div class="form-group">
+    <label for="guess">Guess a Letter</label>
+    <input type="text" name="letter_choice" class="form-control" value="">
+  </div>
+  <button type="submit" name="btn">Guess!</button>
+</form>
