@@ -1,9 +1,15 @@
 <% @spots_to_fill.each_with_index do |spot, index| %>
   <% if spot == 0 %>
-    _ <pre> </pre>
+    ___
   <% else %>
   <%= @word[index] %>
   <% end %>
+<% end %>
+
+<p>You have <%= @guesses_left %> guesses left.</p>
+<p>You have already guessed:</p>
+<% @guessed_letters.each do |ele| %>
+  <%= ele %>
 <% end %>
 
 <form action="/make-guess" method="post">
